@@ -26,7 +26,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let tables = loaded_db.list_tables();
     println!("Loaded tables: {:?}", tables);
 
-    let select_result = db.execute_sql("SELECT * FROM users")?;
+    let select_result = db.execute_sql("SELECT * FROM users where age < 30")?;
     println!("Select result: {:?}", select_result);
 
     Ok(())
